@@ -1,3 +1,10 @@
 (fp_lib_table
-  (lib (name custom)(type KiCad)(uri C:/Users/casmi/OneDrive/Documents/GitHub/magDrone/Hydrologic_Parameters/V0_Development/V0_5/Main_Board/custom.pretty)(options "")(descr ""))
+  (version 7)
+  (lib (name "custom")(type "KiCad")(uri "C:/Users/casmi/OneDrive/Documents/GitHub/magDrone/Hydrologic_Parameters/V0_Development/V0_5/Main_Board/custom.pretty")(options "")(descr ""))
+  (lib (name "ARTS-Lab")(type "KiCad")(uri "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/lib_and_pretty/ARTS-Lab.pretty")(options "")(descr ""))
+  (lib (name "megasaturnv_custom_components")(type "KiCad")(uri "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/lib_and_pretty/kicad-custom-components-library-master/megasaturnv_custom_components.pretty")(options "")(descr ""))
+  (lib (name "Logic level shifter")(type "KiCad")(uri "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/lib_and_pretty/Logic level shifter")(options "")(descr ""))
+  (lib (name "XH2.54")(type "KiCad")(uri "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/lib_and_pretty/XH2.54")(options "")(descr ""))
+  (lib (name "ST-TF-003A")(type "KiCad")(uri "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/lib_and_pretty/ST-TF-003A")(options "")(descr ""))
+  (lib (name "254")(type "KiCad")(uri "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/lib_and_pretty/254")(options "")(descr ""))
 )
