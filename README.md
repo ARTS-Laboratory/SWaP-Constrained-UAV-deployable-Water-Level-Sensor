@@ -42,3 +42,12 @@ Cite as:
   groups = {{ARTS-L}ab},    
   url    = {https://github.com/ARTS-Laboratory/UAV-Deployable-Stage-Height-Sensor},   
 }
+
+<br>
+
+<p align="center">
+<img src="media/QR-for-repo.png" alt="QR code" width="300"/>
+</p>
+<p align="center">
+https://github.com/ARTS-Laboratory/UAV-Deployable-Stage-Height-Sensor
+</p>
