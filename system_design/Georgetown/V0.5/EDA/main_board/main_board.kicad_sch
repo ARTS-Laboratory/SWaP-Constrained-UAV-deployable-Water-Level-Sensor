@@ -8120,76 +8120,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 85.09 27.94 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "362e65ce-5f65-40cf-ac18-dedfe56474cb")
-		(property "Reference" "D1"
-			(at 87.63 26.9874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Schottky"
-			(at 87.63 29.5274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
-			(at 85.09 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 85.09 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 85.09 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "578d2980-2f9a-47c2-bd4e-5c64d93fd7e6")
-		)
-		(pin "2"
-			(uuid "33a4bdf5-40eb-4258-bdaf-7bd120d5a627")
-		)
-		(instances
-			(project ""
-				(path "/6055025c-91fc-4d42-99c1-24bcdc7ae09f"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "main_board-rescue:GND-power")
 		(at 101.6 83.82 180)
 		(unit 1)
@@ -8782,6 +8712,76 @@
 			(project "main_board"
 				(path "/6055025c-91fc-4d42-99c1-24bcdc7ae09f"
 					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 85.09 27.94 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ae95fb69-2496-411b-9f6a-a4b86b911f70")
+		(property "Reference" "D1"
+			(at 87.63 26.9874 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D_Schottky"
+			(at 87.63 29.5274 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_1206_3216Metric"
+			(at 85.09 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 85.09 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 85.09 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d3743b71-23f4-4954-bec0-0100439c515a")
+		)
+		(pin "2"
+			(uuid "ba108773-e904-46ba-97d0-80520a0ebe75")
+		)
+		(instances
+			(project ""
+				(path "/6055025c-91fc-4d42-99c1-24bcdc7ae09f"
+					(reference "D1")
 					(unit 1)
 				)
 			)
