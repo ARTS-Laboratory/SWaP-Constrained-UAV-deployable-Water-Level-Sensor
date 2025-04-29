@@ -1599,6 +1599,188 @@
 				)
 			)
 		)
+		(symbol "Switch:SW_Wuerth_450301014042"
+			(pin_names
+				(offset 1) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_Wuerth_450301014042"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Button_Switch_THT:SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.we-online.com/components/products/datasheet/450301014042.pdf"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Switch slide, single pole double throw"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "changeover single-pole opposite-side-connection double-throw spdt ON-ON"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW*Wuerth*WS*SLTV*10x2.5x6.4*P2.54mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Wuerth_450301014042_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.651 0.254) (xy 1.651 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 -2.54)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 2.54)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SW_Wuerth_450301014042_1_1"
+				(rectangle
+					(start -3.175 3.81)
+					(end 3.175 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Timer_RTC:DS3231M"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3964,7 +4146,7 @@
 		(at 85.09 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7a28c079-f8c6-4fdd-926b-5f6c1d7efb18")
+		(uuid "8bbf3a9a-75a2-4c32-88ef-6b2f5699797d")
 	)
 	(junction
 		(at 177.8 83.82)
@@ -4217,16 +4399,6 @@
 			(type default)
 		)
 		(uuid "194dbb48-97fc-48fa-9364-31b0500a54ef")
-	)
-	(wire
-		(pts
-			(xy 95.25 34.29) (xy 95.25 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "19bf02c6-eb03-42b8-a88b-9858f80e6e19")
 	)
 	(wire
 		(pts
@@ -5050,16 +5222,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 35.56) (xy 90.17 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a9525bca-5698-42b9-b4ab-7b72bddc872a")
-	)
-	(wire
-		(pts
 			(xy 101.6 115.57) (xy 162.56 115.57)
 		)
 		(stroke
@@ -5230,16 +5392,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 35.56) (xy 90.17 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c1276728-651d-4267-9292-69c8a346dd03")
-	)
-	(wire
-		(pts
 			(xy 86.36 152.4) (xy 86.36 156.21)
 		)
 		(stroke
@@ -5317,16 +5469,6 @@
 			(type default)
 		)
 		(uuid "db620a54-8a51-4ebb-84a7-ba5709629689")
-	)
-	(wire
-		(pts
-			(xy 90.17 34.29) (xy 95.25 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dba0ac2e-b97a-44a0-b6d3-6c5a37244991")
 	)
 	(wire
 		(pts
@@ -8240,6 +8382,76 @@
 			(project ""
 				(path "/6055025c-91fc-4d42-99c1-24bcdc7ae09f"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Wuerth_450301014042")
+		(at 90.17 38.1 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7c5b0e25-a4f8-4788-9518-58bcca3b3335")
+		(property "Reference" "SW1"
+			(at 84.074 37.846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Wuerth_450301014042"
+			(at 82.296 43.434 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_THT:SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm"
+			(at 90.17 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/450301014042.pdf"
+			(at 90.17 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Switch slide, single pole double throw"
+			(at 90.17 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "ec99b181-c4a6-478f-9e88-ebd0c166d6f1")
+		)
+		(pin "1"
+			(uuid "3ffb4425-282d-4f0e-b064-e4aed6eedd86")
+		)
+		(pin "2"
+			(uuid "c9a0e6bb-ebce-43b2-a8d8-1f6cbd656644")
+		)
+		(instances
+			(project ""
+				(path "/6055025c-91fc-4d42-99c1-24bcdc7ae09f"
+					(reference "SW1")
 					(unit 1)
 				)
 			)
