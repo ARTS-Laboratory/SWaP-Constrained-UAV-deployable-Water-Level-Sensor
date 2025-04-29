@@ -1393,7 +1393,7 @@
 			(pintype "input")
 			(uuid "47f02c59-a9d0-4378-98ab-9bdcf150e9d0")
 		)
-		(model "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/module CAD/nRF24L01+1.STEP"
+		(model "${KIPRJMOD}/module CAD/nRF24L01+1.STEP"
 			(offset
 				(xyz 0.5 1.45 -4)
 			)
@@ -3705,7 +3705,7 @@
 			(pintype "power_in")
 			(uuid "bd118922-afcc-4e25-9611-190523981b0a")
 		)
-		(model "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/module CAD/arduino nano (1).STEP"
+		(model "${KIPRJMOD}/module CAD/arduino nano (1).STEP"
 			(offset
 				(xyz 0 0 2.5)
 			)
@@ -4448,7 +4448,7 @@
 			(pintype "passive")
 			(uuid "b4233beb-cdc9-465e-bf9b-f3db1fbeb4fb")
 		)
-		(model "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/module CAD/CR-1025-holder.STEP"
+		(model "${KIPRJMOD}/module CAD/CR-1025-holder.STEP"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -5517,7 +5517,7 @@
 			(pintype "passive")
 			(uuid "681e9293-a98b-468e-8094-68f440f1addf")
 		)
-		(model "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/module CAD/switch_450301014042+(rev1).stp"
+		(model "${KIPRJMOD}/module CAD/switch_450301014042+(rev1).stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -7744,7 +7744,7 @@
 			(solder_mask_margin 0.102)
 			(uuid "a850ed2a-279d-4ad1-8da4-b42d6de94875")
 		)
-		(model "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/lib_and_pretty/XH2.54/XH2.54..step"
+		(model "${KIPRJMOD}/module CAD/XH2.54..step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -8002,7 +8002,7 @@
 			(pintype "power_in")
 			(uuid "50f25977-bc2e-46c4-9458-5ce80163e367")
 		)
-		(model "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/module CAD/HX-2S-JA10.step"
+		(model "${KIPRJMOD}/module CAD/HX-2S-JA10.step"
 			(offset
 				(xyz 20.5 0.5 11)
 			)
@@ -8220,7 +8220,7 @@
 			(pintype "input")
 			(uuid "7c13cbf0-f19a-4af7-a4dd-6d50e439d4dc")
 		)
-		(model "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/module CAD/GY-BME280.STEP"
+		(model "${KIPRJMOD}/module CAD/GY-BME280.STEP"
 			(offset
 				(xyz -0.2 -5.1 2.5)
 			)
@@ -9194,7 +9194,7 @@
 		)
 		(fp_arc
 			(start 5.168 -9.472)
-			(mid 2.945408 -8.849733)
+			(mid 2.945408 -8.849734)
 			(end 0.6469 -8.64)
 			(stroke
 				(width 0.127)
@@ -9205,7 +9205,7 @@
 		)
 		(fp_arc
 			(start 5.168 -9.472)
-			(mid 5.659552 -9.609638)
+			(mid 5.659551 -9.609643)
 			(end 6.1679 -9.656)
 			(stroke
 				(width 0.127)
@@ -9476,9 +9476,9 @@
 				)
 			)
 		)
-		(model "C:/Users/ask15/OneDrive - University of South Carolina/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5/EDA/lib_and_pretty/ST-TF-003A/ST-TF-003A.step"
+		(model "${KIPRJMOD}/module CAD/ST-TF-003A.step"
 			(offset
-				(xyz 1.3 -1.8 0)
+				(xyz 1.25 -2 0)
 			)
 			(scale
 				(xyz 1 1 1)
