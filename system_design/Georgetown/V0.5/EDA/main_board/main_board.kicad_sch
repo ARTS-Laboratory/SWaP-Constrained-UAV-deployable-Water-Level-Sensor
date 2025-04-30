@@ -4632,7 +4632,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 80.01) (xy 146.05 80.01)
+			(xy 73.66 71.12) (xy 146.05 71.12)
 		)
 		(stroke
 			(width 0)
@@ -4739,6 +4739,16 @@
 			(type default)
 		)
 		(uuid "5d3e5eae-7d8d-4c7a-9da7-64381f451b5a")
+	)
+	(wire
+		(pts
+			(xy 146.05 71.12) (xy 146.05 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6164b424-671e-48da-a19f-e4f48bfa7daa")
 	)
 	(wire
 		(pts
@@ -5122,7 +5132,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 80.01) (xy 73.66 59.69)
+			(xy 73.66 71.12) (xy 73.66 59.69)
 		)
 		(stroke
 			(width 0)
@@ -5778,7 +5788,7 @@
 			)
 		)
 		(property "Value" "DS3231M"
-			(at 229.87 107.188 0)
+			(at 230.378 122.682 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8138,7 +8148,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 101.473 79.4258 0)
+			(at 101.092 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
