@@ -1,4 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "Magdron mount-rescue")(type "KiCad")(uri "${KIPRJMOD}/Magdron mount-rescue.kicad_sym")(options "")(descr ""))
-)
