@@ -1,47 +1,59 @@
 /*
- * This sketch is used to set the DS3231 real-time clock. Uncomment the proper line of code to set the RTC.
- * Ensure the external 3V coin cell is in place to keep the time after compilation.
+ * This sketch is used to set the DS3231 real-time clock. 
  * 
- * Written by Corinne Smith 11-2021
+ * Written by Md Asifuzzaman Khan 05-05-2025
  */
 
-#include <Wire.h>
-#include "RTClib.h"
+#include <DS3232RTC.h>      // https://github.com/JChristensen/DS3232RTC
+#include <Streaming.h>      // https://github.com/janelia-arduino/Streaming
 
-RTC_DS3231 rtc;
-char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+DS3232RTC myRTC;
 
-void setup () {
-  Serial.begin(9600);
-  rtc.begin();
+void setup()
+{
+    Serial.begin(9600);
 
-  // Uncomment to set the date and time of the RTC to when the sketch was compiled
-  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-
-  // Uncomment to set the date and time of the RTC to a user defined time
-  // format: rtc.adjust(DateTime(yyyy, mm, dd, hh, mm, ss));
-  //rtc.adjust(DateTime(2021, 11, 22, 9, 4, 6));
+    // initialize the alarms to known values, clear the alarm flags, clear the alarm interrupt flags
+    myRTC.begin();
+    // set the RTC time and date to the compile time
+    myRTC.set(compileTime());
 }
 
-void loop () {
-  // determine the current time
-  DateTime now = rtc.now();   
+void loop(){
+    printDateTime(myRTC.get());
+    Serial.println();
+    delay(1000);     // no need to bombard the RTC continuously
+}
 
-  // print the time every second
-  Serial.print(now.year(), DEC);
-  Serial.print('/');
-  Serial.print(now.month(), DEC);
-  Serial.print('/');
-  Serial.print(now.day(), DEC);
-  Serial.print(" (");
-  Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
-  Serial.print(") ");
-  Serial.print(now.hour(), DEC);
-  Serial.print(':');
-  Serial.print(now.minute(), DEC);
-  Serial.print(':');
-  Serial.print(now.second(), DEC);
-  Serial.println();
-  delay(1000);
+void printDateTime(time_t t)
+{
+    Serial << ((day(t)<10) ? "0" : "") << _DEC(day(t));
+    Serial << monthShortStr(month(t)) << _DEC(year(t)) << ' ';
+    Serial << ((hour(t)<10) ? "0" : "") << _DEC(hour(t)) << ':';
+    Serial << ((minute(t)<10) ? "0" : "") << _DEC(minute(t)) << ':';
+    Serial << ((second(t)<10) ? "0" : "") << _DEC(second(t));
+    
+}
 
+// function to return the compile date and time as a time_t value
+time_t compileTime()
+{
+    const time_t FUDGE(10);    //fudge factor to allow for upload time, etc. (seconds, YMMV)
+    const char *compDate = __DATE__, *compTime = __TIME__, *months = "JanFebMarAprMayJunJulAugSepOctNovDec";
+    char compMon[4], *m;
+
+    strncpy(compMon, compDate, 3);
+    compMon[3] = '\0';
+    m = strstr(months, compMon);
+
+    tmElements_t tm;
+    tm.Month = ((m - months) / 3 + 1);
+    tm.Day = atoi(compDate + 4);
+    tm.Year = atoi(compDate + 7) - 1970;
+    tm.Hour = atoi(compTime);
+    tm.Minute = atoi(compTime + 3);
+    tm.Second = atoi(compTime + 6);
+
+    time_t t = makeTime(tm);
+    return t + FUDGE;        //add fudge factor to allow for compile time
 }
