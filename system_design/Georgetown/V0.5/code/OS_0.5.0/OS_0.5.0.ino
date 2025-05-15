@@ -38,13 +38,12 @@ void setup() {
   pinMode(LED, OUTPUT);
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
-  pinMode(RTCinterrupt, INPUT_PULLUP);            // configure the interrupt pin using the built-in pullup resistor
-  //Serial.println("Executing data_collection.ino");
+  pinMode(RTCinterrupt, INPUT_PULLUP);  // configure the interrupt pin using the built-in pullup resistor
 
   // SD card initialization --------------------------------------------------------------------------------------------------------------------------
   if (!SD.begin())                               
   {
-    digitalWrite(LED, HIGH);                      // LED remains on if SD card does not work
+    digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
     //Serial.println("no SD found");
     while (1);                                    
   }
@@ -54,7 +53,7 @@ void setup() {
   }
 
   // RTC initializaiton ------------------------------------------------------------------------------------------------------------------------------
-    // initialize the alarms to known values, clear the alarm flags, clear the alarm interrupt flags
+  // initialize the alarms to known values, clear the alarm flags, clear the alarm interrupt flags
   RTC.begin();
   RTC.setAlarm(DS3232RTC::ALM1_MATCH_DATE, 0, 0, 0, 1);
   RTC.setAlarm(DS3232RTC::ALM2_MATCH_DATE, 0, 0, 0, 1);
@@ -78,7 +77,7 @@ void setup() {
   bme.begin(0x76);
 
   // Voltage regulator initialization -----------------------------------------------------------------------------------------------------------------
-  uint32_t currentFrequency;
+  //uint32_t currentFrequency;
   ina219.begin();
 }
 
