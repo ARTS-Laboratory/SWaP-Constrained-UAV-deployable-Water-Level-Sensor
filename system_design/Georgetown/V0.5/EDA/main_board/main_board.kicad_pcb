@@ -10282,7 +10282,7 @@
 		)
 		(fp_arc
 			(start 5.168 -9.472)
-			(mid 2.945408 -8.849733)
+			(mid 2.945408 -8.849734)
 			(end 0.6469 -8.64)
 			(stroke
 				(width 0.127)
@@ -10293,7 +10293,7 @@
 		)
 		(fp_arc
 			(start 5.168 -9.472)
-			(mid 5.659552 -9.609641)
+			(mid 5.659552 -9.609635)
 			(end 6.1679 -9.656)
 			(stroke
 				(width 0.127)
@@ -10783,6 +10783,18 @@
 				(thickness 0.15)
 			)
 			(justify left bottom mirror)
+		)
+	)
+	(gr_text "C"
+		(at 140 103.5 90)
+		(layer "B.SilkS")
+		(uuid "d8d3eccb-a814-498c-b16f-7bbd7db081d3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
 		)
 	)
 	(gr_text "+"
