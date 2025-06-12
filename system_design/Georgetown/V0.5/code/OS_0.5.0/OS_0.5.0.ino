@@ -21,6 +21,9 @@ UltraSonicDistanceSensor distanceSensor(trigPin, echoPin);
 // SD ---------------------------------------------------------------------------------------------------
 const int pinCS = 10;
 
+// nRF ---------------------------------------------------------------------------------------------------
+const int rfpinCS = 7;
+
 // BME280 -----------------------------------------------------------------------------------------------
 Adafruit_BME280 bme;
 
@@ -33,7 +36,7 @@ constexpr time_t alarmInterval{5*60}; // wake up interval in seconds
 unsigned long prevTimeElapsed = 0;
 
 void setup() {
-  //Serial.begin(9600);
+  Serial.begin(9600);
   pinMode(pinCS, OUTPUT);
   pinMode(LED, OUTPUT);
   pinMode(trigPin, OUTPUT);
@@ -44,12 +47,12 @@ void setup() {
   if (!SD.begin())                               
   {
     digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
-    //Serial.println("no SD found");
+    Serial.println("no SD found");
     while (1);                                    
   }
   else
   {
-    //Serial.println("SD found");
+    Serial.println("SD found");
   }
 
   // RTC initializaiton ------------------------------------------------------------------------------------------------------------------------------
