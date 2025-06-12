@@ -6227,7 +6227,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "0.1uF"
 			(at 241.3 147.5994 90)
 			(effects
 				(font
@@ -6604,7 +6604,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Rs"
+		(property "Value" "0.1"
 			(at 98.298 43.053 0)
 			(effects
 				(font
@@ -6673,7 +6673,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "0.1uF"
 			(at 108.331 43.053 0)
 			(effects
 				(font
@@ -7075,7 +7075,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "0.1uF"
 			(at 104.521 57.023 0)
 			(effects
 				(font
@@ -7144,7 +7144,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "22uF"
 			(at 74.041 57.023 0)
 			(effects
 				(font
