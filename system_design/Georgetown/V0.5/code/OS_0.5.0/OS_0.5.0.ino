@@ -32,11 +32,11 @@ Adafruit_INA219 ina219;
 
 // controls ---------------------------------------------------------------------------------------------
 const int LED = A3;
-constexpr time_t alarmInterval{5*60}; // wake up interval in seconds
+constexpr time_t alarmInterval{60*5}; // wake up interval in seconds
 unsigned long prevTimeElapsed = 0;
 
 void setup() {
-  Serial.begin(9600);
+  //Serial.begin(9600);
   pinMode(pinCS, OUTPUT);
   pinMode(LED, OUTPUT);
   pinMode(trigPin, OUTPUT);
@@ -47,12 +47,14 @@ void setup() {
   if (!SD.begin())                               
   {
     digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
-    Serial.println("no SD found");
-    while (1);                                    
+    //Serial.println("no SD found");
+    while (1){
+      error_blink();                                   
+    }
   }
   else
   {
-    Serial.println("SD found");
+    //Serial.println("SD found");
   }
 
   // RTC initializaiton ------------------------------------------------------------------------------------------------------------------------------
@@ -82,21 +84,32 @@ void setup() {
   // Voltage regulator initialization -----------------------------------------------------------------------------------------------------------------
   //uint32_t currentFrequency;
   ina219.begin();
+  ina219.setCalibration_16V_400mA(); //for 0.1 ohm shunt res used
+  delay(10);
 }
 
 void loop() {
   digitalWrite(LED, LOW);     // turn off LED before sleeping
-  delay(10);
+  delay(100);
   goSleep();
 }
 
+void error_blink(){
+  for(int i=0; i<5; i++){
+    digitalWrite(LED, 1);
+    delay(50);
+    digitalWrite(LED, 0);
+    delay(50);
+  }
+  delay(2000);
+}
 void goSleep() {
-  //Serial.println("Going to sleep...");
+  ////Serial.println("Going to sleep...");
   delay(100);
 
-  // activate sleep mode, attach interrupt and assign a waking function to run
-  sleep_enable();                               
+  // activate sleep mode, attach interrupt and assign a waking function to run                              
   attachInterrupt(digitalPinToInterrupt(RTCinterrupt), RTCtrigger, FALLING);
+  sleep_enable(); 
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);              // set to full sleep mode   
   sleep_cpu();                                  
 
@@ -113,7 +126,7 @@ void goSleep() {
 
 void RTCtrigger() {
   // this is the wake up function to run once the RTC interrupt is fired
-  //Serial.println("RTC interrupt fired");
+  ////Serial.println("RTC interrupt fired");
   delay(100);
 
   sleep_disable();                        // disable sleep mode
@@ -123,7 +136,7 @@ void RTCtrigger() {
 void logData() {
   // this is the data collection function
   unsigned long timeElapsed = millis();
-  //Serial.println("Recording data...");
+  ////Serial.println("Recording data...");
   digitalWrite(LED, HIGH);
   delay(10);
 
@@ -190,14 +203,16 @@ void logData() {
 
     myFile.println("");
     myFile.close();           // closes and saves the file to the SD card
-    //Serial.print("Complete! Elapsed time: "); //Serial.print(timeElapsed - prevTimeElapsed); //Serial.println(" ms");
+    ////Serial.print("Complete! Elapsed time: "); ////Serial.print(timeElapsed - prevTimeElapsed); ////Serial.println(" ms");
     prevTimeElapsed = timeElapsed;
   }
   else
   {
-    //Serial.println("Error opening file");
+    ////Serial.println("Error opening file");
     digitalWrite(LED, HIGH);                // LED will stay on if the file is not opening properly. 
-    while (1);
+    while (1){
+      error_blink();
+    }
   }
   delay(100);
   digitalWrite(LED, LOW);
