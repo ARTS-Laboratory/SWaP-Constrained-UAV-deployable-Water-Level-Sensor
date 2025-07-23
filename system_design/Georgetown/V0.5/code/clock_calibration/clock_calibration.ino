@@ -16,7 +16,7 @@ void setup()
     // initialize the alarms to known values, clear the alarm flags, clear the alarm interrupt flags
     myRTC.begin();
     // set the RTC time and date to the compile time
-    //myRTC.set(compileTime());
+    myRTC.set(compileTime());
 }
 
 void loop(){
