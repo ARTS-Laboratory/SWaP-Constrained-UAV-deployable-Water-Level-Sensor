@@ -34,7 +34,7 @@ Adafruit_INA219 ina219;
 const int LED = A3;
 //constexpr time_t alarmInterval{5*60}; // wake up interval in seconds
 unsigned long prevTimeElapsed = 0;
-time_t alarmInterval;
+
 // Returns the sleep interval in seconds based on LiPo voltage
 unsigned long getDynamicInterval(float voltage) {
   if (voltage >= 8) return 5 * 60;        // 5 minutes
