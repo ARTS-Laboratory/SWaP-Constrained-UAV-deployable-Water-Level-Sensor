@@ -39,8 +39,8 @@ unsigned long prevTimeElapsed = 0;
 // Returns the sleep interval in seconds based on LiPo voltage
 unsigned long getDynamicInterval(float voltage) {
   if (voltage >= 7.2) return 5 * 60;        // 5 minutes
-  else if (voltage >= 6.2) return 30 * 60;  // 30 minutes
-  else return 4 * 60 * 60;                  // 4 hours
+  else if (voltage >= 6.6) return 30 * 60;  // 30 minutes
+  else return 15;                  // 4 hours
 }
 
 void setup() {
@@ -56,7 +56,7 @@ void setup() {
   {
     digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
     Serial.println("no SD found");
-    while (1);                                    
+    error_blink();                                    
   }
   else
   {
@@ -207,8 +207,18 @@ void logData() {
   {
     //Serial.println("Error opening file");
     digitalWrite(LED, HIGH);                // LED will stay on if the file is not opening properly. 
-    while (1);
+    error_blink();
   }
   delay(100);
   digitalWrite(LED, LOW);
+}
+
+void error_blink(){
+  for(int i=0; i<5; i++){
+    digitalWrite(LED, 1);
+    delay(50);
+    digitalWrite(LED, 0);
+    delay(50);
+  }
+  delay(2000);
 }
