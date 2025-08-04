@@ -56,7 +56,9 @@ void setup() {
   {
     digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
     Serial.println("no SD found");
-    error_blink();                                    
+    while(true){
+      error_blink();                                    
+    }
   }
   else
   {
@@ -207,7 +209,9 @@ void logData() {
   {
     //Serial.println("Error opening file");
     digitalWrite(LED, HIGH);                // LED will stay on if the file is not opening properly. 
-    error_blink();
+    while(true){
+      error_blink();
+    }
   }
   delay(100);
   digitalWrite(LED, LOW);
