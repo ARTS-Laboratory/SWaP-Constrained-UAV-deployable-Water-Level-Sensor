@@ -32,14 +32,15 @@ Adafruit_INA219 ina219;
 
 // controls ---------------------------------------------------------------------------------------------
 const int LED = A3;
- time_t alarmInterval; // wake up interval in seconds
+//constexpr time_t alarmInterval{5*60}; // wake up interval in seconds
+unsigned long alarmInterval = 5 * 60; // 5 min default
 unsigned long prevTimeElapsed = 0;
 
 // Returns the sleep interval in seconds based on LiPo voltage
 unsigned long getDynamicInterval(float voltage) {
-  if (voltage >= 8) return 2;        // 5 minutes
-  else if (voltage >= 7.2) return 5;  // 30 minutes
-  else return 5;                  // 4 hours
+  if (voltage >= 7.2) return 5 * 60;        // 5 minutes
+  else if (voltage >= 6.2) return 30 * 60;  // 30 minutes
+  else return 4 * 60 * 60;                  // 4 hours
 }
 
 void setup() {
@@ -111,7 +112,7 @@ void goSleep() {
 
   // --- Read voltage and set dynamic alarm ---
   float busvoltage = ina219.getBusVoltage_V();
-  unsigned long alarmInterval = getDynamicInterval(busvoltage);
+alarmInterval = getDynamicInterval(busvoltage);
 
   // Set next alarm
   time_t t = RTC.get();
