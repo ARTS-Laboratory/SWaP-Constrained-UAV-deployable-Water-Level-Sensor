@@ -38,9 +38,9 @@ unsigned long prevTimeElapsed = 0;
 
 // Returns the sleep interval in seconds based on LiPo voltage
 unsigned long getDynamicInterval(float voltage) {
-  if (voltage >= 7.2) return 5 * 60;        // 5 minutes
+  if (voltage >= 7.2) return 10 * 60;        // 5 minutes
   else if (voltage >= 6.6) return 30 * 60;  // 30 minutes
-  else return 15;                  // 4 hours
+  else return 24*60*60;                  // 24 hours
 }
 
 void setup() {
@@ -114,7 +114,7 @@ void goSleep() {
 
   // --- Read voltage and set dynamic alarm ---
   float busvoltage = ina219.getBusVoltage_V();
-alarmInterval = getDynamicInterval(busvoltage);
+  alarmInterval = getDynamicInterval(busvoltage);
 
   // Set next alarm
   time_t t = RTC.get();
