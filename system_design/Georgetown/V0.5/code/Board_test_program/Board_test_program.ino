@@ -49,11 +49,11 @@ void setup() {
   if (!SD.begin())
   {
     digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
-    //Serial.println("no SD found");
+    Serial.println("no SD found");
   }
   else
   {
-    //Serial.println("SD found");
+    Serial.println("SD found");
   }
 
   // RTC initializaiton ------------------------------------------------------------------------------------------------------------------------------
@@ -77,7 +77,7 @@ void setup() {
 
 void loop() {
   digitalWrite(LED, LOW);     // turn off LED before sleeping
-  delay(100);
+  delay(10);
   logData();
 }
 
