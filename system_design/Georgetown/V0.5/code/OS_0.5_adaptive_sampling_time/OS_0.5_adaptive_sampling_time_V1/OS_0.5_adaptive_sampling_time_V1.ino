@@ -1,5 +1,4 @@
 #include <SD.h>                         // for SD card module
-#include <SPI.h>                        // for SPI
 #include <Wire.h>                       // for I2C
 #include <HCSR04.h>                     // for the USS
 #include <DS3232RTC.h>                  // for the RTC https://github.com/JChristensen/DS3232RTC
@@ -9,20 +8,20 @@ DS3232RTC RTC;
 #include <Adafruit_BME280.h>            // for BME
 #include <Adafruit_INA219.h>            // for voltage monitor
 
-const int RTCinterrupt = 2;             // RTC interrupt from sleep mode on digital pin 2
+#define RTCinterrupt 2            // RTC interrupt from sleep mode on digital pin 2
 #define SEALEVELPRESSURE_HPA (1013.25)  // constant for bme
 
 
 // HC-SR04 ----------------------------------------------------------------------------------------------
-const int trigPin = 9;     
-const int echoPin = 8;      
+#define trigPin 9     
+#define echoPin 8      
 UltraSonicDistanceSensor distanceSensor(trigPin, echoPin);
 
 // SD ---------------------------------------------------------------------------------------------------
-const int pinCS = 10;
+#define pinCS 10
 
 // nRF ---------------------------------------------------------------------------------------------------
-const int rfpinCS = 7;
+#define rfpinCS 7
 
 // BME280 -----------------------------------------------------------------------------------------------
 Adafruit_BME280 bme;
@@ -31,7 +30,7 @@ Adafruit_BME280 bme;
 Adafruit_INA219 ina219;
 
 // controls ---------------------------------------------------------------------------------------------
-const int LED = A3;
+#define LED A3
 //constexpr time_t alarmInterval{5*60}; // wake up interval in seconds
 unsigned long alarmInterval = 5 * 60; // 5 min default
 unsigned long prevTimeElapsed = 0;
