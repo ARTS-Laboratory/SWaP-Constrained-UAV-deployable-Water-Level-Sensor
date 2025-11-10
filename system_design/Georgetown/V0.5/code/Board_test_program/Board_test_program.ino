@@ -53,7 +53,7 @@ void setup() {
   }
   else
   {
-    Serial.println("SD found");
+    Serial.println("SD card found functional");
   }
 
   // RTC initializaiton ------------------------------------------------------------------------------------------------------------------------------
