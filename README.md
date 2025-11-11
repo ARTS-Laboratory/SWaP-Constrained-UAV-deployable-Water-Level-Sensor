@@ -16,7 +16,7 @@ Figure 2: The "Georgetown Version 0.5" of the sensor, showing the  a) assembled 
 </p>
 
 <p align="center">
-<img src="media/2025-deployment.png" alt="drawing" width="600"/>
+<img src="media/2025-deployment.jpg" alt="drawing" width="600"/>
 </p>
 <p align="center">
 Figure 3: Sensors deployed for continuous monitoring in the Charleston SC area.
