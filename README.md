@@ -2,25 +2,27 @@
 UAV Deployable Stage Height Sensor with Electro-permanent Magnet Docking Mechanism
 
 <p align="center">
-<img src="media/graphical_abstract.png" alt="drawing" width="600"/>
-</p>
-<p align="center">
-Figure 1: Drone delivering a sensor package underneath a structure.
-</p>
-
-<p align="center">
 <img src="media/2025-sensor.png" alt="drawing" width="600"/>
 </p>
 <p align="center">
-Figure 2: The "Georgetown Version 0.5" of the sensor, showing the  a) assembled sensor package, and b) the cross-section view.
+Figure 1: The "Georgetown Version 0.5" of the sensor, showing the  a) assembled sensor package, and b) the cross-section view.
 </p>
 
 <p align="center">
-<img src="media/2025-deployment.jpg" alt="drawing" width="600"/>
+<img src="media/2025-deployment.jpg" alt="drawing" width="800"/>
 </p>
 <p align="center">
-Figure 3: Sensors deployed for continuous monitoring in the Charleston SC area.
+Figure 2: Sensors deployed for continuous monitoring in the Charleston SC area.
 </p>
+
+<p align="center">
+<img src="media/graphical_abstract.png" alt="drawing" width="600"/>
+</p>
+<p align="center">
+Figure 3: Drone delivering a sensor package underneath a structure.
+</p>
+
+
 
 ## V0
 1. Data logging saved onto SD card
