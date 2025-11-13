@@ -1,5 +1,5 @@
 # UAV-Deployable-Stage-Height-Sensor
-UAV Deployable Stage Height Sensor with Electro-permanent Magnet Docking Mechanism
+UAV Deployable Stage Height Sensor with Magnetic Docking Mechanism
 
 <p align="center">
 <img src="media/2025-sensor.png" alt="drawing" width="600"/>
@@ -19,7 +19,7 @@ Figure 2: Sensors deployed for continuous monitoring in the Charleston, SC area.
 <img src="media/graphical_abstract.png" alt="drawing" width="600"/>
 </p>
 <p align="center">
-Figure 3: Drone delivering a sensor package underneath a structure.
+Figure 3: Drone delivering a sensor package underneath a structure using Electro Parmanent Magnet docking mechanism.
 </p>
 
 
