@@ -31,6 +31,7 @@
     "visible_items": [
       "vias",
       "footprint_text",
+      "footprint_anchors",
       "ratsnest",
       "grid",
       "footprints_front",
@@ -38,9 +39,15 @@
       "footprint_values",
       "footprint_references",
       "tracks",
+      "drc_errors",
+      "drawing_sheet",
       "bitmaps",
       "pads",
       "zones",
+      "drc_warnings",
+      "drc_exclusions",
+      "locked_item_shadows",
+      "conflict_shadows",
       "shapes"
     ],
     "visible_layers": "00000000_00000000_0000feff_aaaaaaaf",
