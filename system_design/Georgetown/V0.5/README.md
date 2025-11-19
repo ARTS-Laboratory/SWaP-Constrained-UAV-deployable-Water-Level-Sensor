@@ -6,6 +6,11 @@
 <img src="figures/overview.png" alt="drawing" style="width:800px;"/>
 </p>
 
+## System diagram
+<p align="center">
+<img src="figures/electronics.png" alt="drawing" style="width:800px;"/>
+</p>
+
 ## V0.5 PCB Top side
 <p align="center">
 <img src="figures/PCB_top.png" alt="drawing" style="width:300px;"/>
