@@ -1,6 +1,4 @@
 #include <SD.h>                         // for SD card module
-#include <Wire.h>                       // for I2C
-#include <HCSR04.h>                     // for the USS
 #include <DS3232RTC.h>                  // for the RTC https://github.com/JChristensen/DS3232RTC
 DS3232RTC RTC;
 #include <avr/sleep.h>                  // for sleep mode
@@ -9,19 +7,19 @@ DS3232RTC RTC;
 #include <Adafruit_INA219.h>            // for voltage monitor
 
 #define RTCinterrupt 2            // RTC interrupt from sleep mode on digital pin 2
-#define SEALEVELPRESSURE_HPA (1013.25)  // constant for bme
+//#define SEALEVELPRESSURE_HPA (1013.25)  // constant for bme
 
+#define DEBUG_SERIAL 0
 
 // HC-SR04 ----------------------------------------------------------------------------------------------
-#define trigPin 9     
-#define echoPin 8      
-UltraSonicDistanceSensor distanceSensor(trigPin, echoPin);
+#define trigPin 9
+#define echoPin 8
 
 // SD ---------------------------------------------------------------------------------------------------
 #define pinCS 10
 
 // nRF ---------------------------------------------------------------------------------------------------
-#define rfpinCS 7
+//#define rfpinCS 7
 
 // BME280 -----------------------------------------------------------------------------------------------
 Adafruit_BME280 bme;
@@ -31,19 +29,20 @@ Adafruit_INA219 ina219;
 
 // controls ---------------------------------------------------------------------------------------------
 #define LED A3
-//constexpr time_t alarmInterval{5*60}; // wake up interval in seconds
-unsigned long alarmInterval = 5 * 60; // 5 min default
-unsigned long prevTimeElapsed = 0;
+
+int alarmInterval = 5 * 60; // 5 min default
 
 // Returns the sleep interval in seconds based on LiPo voltage
 unsigned long getDynamicInterval(float voltage) {
-  if (voltage >= 8) return 15*60;        // 30 min
-  else if (voltage >= 7.4) return 15*60;  // 60 min
-  else return 15*60;                  // 2 hours
+  if (voltage >= 8) return 15 * 60;      // 30 min
+  else if (voltage >= 7.4) return 15 * 60; // 60 min
+  else return 15 * 60;                // 2 hours
 }
 
 void setup() {
+#if DEBUG_SERIAL
   Serial.begin(9600);
+#endif
   pinMode(pinCS, OUTPUT);
   pinMode(LED, OUTPUT);
   pinMode(trigPin, OUTPUT);
@@ -51,17 +50,21 @@ void setup() {
   pinMode(RTCinterrupt, INPUT_PULLUP);  // configure the interrupt pin using the built-in pullup resistor
 
   // SD card initialization --------------------------------------------------------------------------------------------------------------------------
-  if (!SD.begin())                               
+  if (!SD.begin())
   {
     digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
+#if DEBUG_SERIAL
     Serial.println("no SD found");
-    while(true){
-      error_blink();                                    
+#endif
+    while (true) {
+      error_blink();
     }
   }
   else
   {
+#if DEBUG_SERIAL
     Serial.println("SD found");
+#endif
   }
 
   // RTC initializaiton ------------------------------------------------------------------------------------------------------------------------------
@@ -74,10 +77,10 @@ void setup() {
   RTC.alarmInterrupt(DS3232RTC::ALARM_1, false);
   RTC.alarmInterrupt(DS3232RTC::ALARM_2, false);
   RTC.squareWave(DS3232RTC::SQWAVE_NONE);
-  
+
   // get the current time from the RTC and set an alarm according to the time interval
-                            
-  time_t t = RTC.get();                            
+
+  time_t t = RTC.get();
   time_t a = t + alarmInterval - t % alarmInterval;
   if (a <= t) a += alarmInterval;
   // set the alarm
@@ -88,8 +91,7 @@ void setup() {
   // BME initialization ------------------------------------------------------------------------------------------------------------------------------
   bme.begin(0x76);
 
-  // Voltage regulator initialization -----------------------------------------------------------------------------------------------------------------
-  //uint32_t currentFrequency;
+  // Voltage monitor initialization -----------------------------------------------------------------------------------------------------------------
   ina219.begin();
 }
 
@@ -103,13 +105,13 @@ void goSleep() {
   delay(100);
 
   // Put Arduino into sleep mode
-  sleep_enable();                               
+  sleep_enable();
   attachInterrupt(digitalPinToInterrupt(RTCinterrupt), RTCtrigger, FALLING);
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN);           
-  sleep_cpu();                                  
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  sleep_cpu();
 
   // Run the data logging function after waking
-  logData();                                   
+  logData();
 
   // --- Read voltage and set dynamic alarm ---
   float busvoltage = ina219.getBusVoltage_V();
@@ -131,10 +133,29 @@ void RTCtrigger() {
   detachInterrupt(digitalPinToInterrupt(RTCinterrupt));          // clear the interrupt flag
 }
 
+long measureDistanceCm() {
+  // Trigger pulse
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  // Read echo (timeout protects against hang)
+  long duration = pulseIn(echoPin, HIGH, 30000UL); // 30 ms timeout
+
+  if (duration == 0) {
+    return -1;  // no echo
+  }
+
+  // Sound speed: ~0.0343 cm/us; /2 because out and back
+  long distance = duration * 0.0343 / 2.0;
+  return distance;
+}
+
 void logData() {
   // this is the data collection function
-  unsigned long timeElapsed = millis();
-  //Serial.println("Recording data...");
+
   digitalWrite(LED, HIGH);
   delay(10);
 
@@ -143,10 +164,11 @@ void logData() {
   float total = 0;
   float num = 0;
   for (int i = 0; i < 5; i++) {
-    dist[i] = distanceSensor.measureDistanceCm();
+    long d = measureDistanceCm();
+    dist[i] = d;
     delay(500);
-    if (dist[i] > 0) {
-      total = total + dist[i];
+    if (d > 0) {
+      total += d;
       num++;
     }
   }
@@ -170,18 +192,23 @@ void logData() {
   {
     // write the RTC data
     time_t t = RTC.get();
-    myFile.print(String(month(t)));
-    myFile.print("/");
-    myFile.print(String(day(t)));
-    myFile.print("/");
-    myFile.print(String(year(t)));
-    myFile.print(" ");
-    myFile.print(String(hour(t)));
-    myFile.print(":");
-    myFile.print(String(minute(t)));
-    myFile.print(":");
-    myFile.print(String(second(t)));
-    myFile.print(",");
+
+    // Date
+    myFile.print(month(t));
+    myFile.print('/');
+    myFile.print(day(t));
+    myFile.print('/');
+    myFile.print(year(t));
+    myFile.print(' ');
+
+    // Time
+    myFile.print(hour(t));
+    myFile.print(':');
+    myFile.print(minute(t));
+    myFile.print(':');
+    myFile.print(second(t));
+    myFile.print(',');
+
 
     // write the USS data
     for (int i = 0; i < 5; i++) {
@@ -199,16 +226,14 @@ void logData() {
     myFile.print(current_mA); myFile.print(",");
     myFile.print(power_mW); myFile.print(",");
 
-    myFile.println("");
+    myFile.println();
     myFile.close();           // closes and saves the file to the SD card
-    //Serial.print("Complete! Elapsed time: "); //Serial.print(timeElapsed - prevTimeElapsed); //Serial.println(" ms");
-    prevTimeElapsed = timeElapsed;
+
   }
   else
   {
-    //Serial.println("Error opening file");
-    digitalWrite(LED, HIGH);                // LED will stay on if the file is not opening properly. 
-    while(true){
+    digitalWrite(LED, HIGH);                // LED will stay on if the file is not opening properly.
+    while (true) {
       error_blink();
     }
   }
@@ -216,8 +241,8 @@ void logData() {
   digitalWrite(LED, LOW);
 }
 
-void error_blink(){
-  for(int i=0; i<5; i++){
+void error_blink() {
+  for (int i = 0; i < 5; i++) {
     digitalWrite(LED, 1);
     delay(50);
     digitalWrite(LED, 0);

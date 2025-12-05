@@ -46,6 +46,7 @@ void setup() {
   pinMode(RTCinterrupt, INPUT_PULLUP);  // configure the interrupt pin using the built-in pullup resistor
 
   // SD card initialization --------------------------------------------------------------------------------------------------------------------------
+  Serial.println("Checking SD card...");
   if (!SD.begin())
   {
     digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
@@ -53,26 +54,45 @@ void setup() {
   }
   else
   {
-    Serial.println("SD card found functional");
+    Serial.println("SD card OK");
   }
 
-  // RTC initializaiton ------------------------------------------------------------------------------------------------------------------------------
+  Serial.println("Checking INA219...");
+  // Voltage regulator initialization -----------------------------------------------------------------------------------------------------------------
+  //uint32_t currentFrequency;
+
+  if (!ina219.begin())
+  {
+    digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
+    Serial.println("INA219 error");
+  }
+  else
+  {
+    Serial.println("INA219 OK");
+  }
+  ina219.setCalibration_16V_400mA(); //for 0.1 ohm shunt res used
+  delay(10);
+
+  // BME initialization ------------------------------------------------------------------------------------------------------------------------------
+  Serial.println("Checking BME280...");
+  if (!bme.begin(0x76))
+  {
+    digitalWrite(LED, HIGH);            // LED remains on if SD card does not work
+    Serial.println("BME280 error");
+  }
+  else
+  {
+    Serial.println("BME280 OK");
+  }
+  
+
+   // RTC initializaiton ------------------------------------------------------------------------------------------------------------------------------
   // initialize the alarms to known values, clear the alarm flags, clear the alarm interrupt flags
   RTC.begin();
 
   // get the current time from the RTC and set an alarm according to the time interval
 
   time_t t = RTC.get();
-
-
-  // BME initialization ------------------------------------------------------------------------------------------------------------------------------
-  bme.begin(0x76);
-
-  // Voltage regulator initialization -----------------------------------------------------------------------------------------------------------------
-  //uint32_t currentFrequency;
-  ina219.begin();
-  ina219.setCalibration_16V_400mA(); //for 0.1 ohm shunt res used
-  delay(10);
 }
 
 void loop() {
