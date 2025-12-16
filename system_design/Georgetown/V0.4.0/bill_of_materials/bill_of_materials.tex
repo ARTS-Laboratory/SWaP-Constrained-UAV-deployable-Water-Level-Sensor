@@ -1,0 +1,178 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%                NSF requirement, DO NOT ADJUST                             %    
+\documentclass[11pt,letterpaper]{article}
+\usepackage{mathptmx} % added for time new roman font                        %
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{placeins}        % Added for \FloatBarrier
+\usepackage{enumitem}        % Added for changes in \item
+\usepackage{commath}         % added for \norm
+\usepackage{wrapfig}
+\usepackage{tabu}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{siunitx}
+%\usepackage[sorting=none]{biblatex}
+%\bibliography{references}
+%\usepackage{arydshln}        % added for \hdashline
+\usepackage[table]{xcolor}
+\usepackage[colorinlistoftodos,textsize=tiny]{todonotes}
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{Downey_NSF}
+\usepackage[hidelinks]{hyperref}		% added for custom .bst file, as explained here. https://tex.stackexchange.com/questions/67444/doi-in-ieeetran-bibliography
+% Added by Corinne
+\usepackage{longtable} 		% added for longer tables
+\usepackage{hhline} 		% added for double horizontal lines
+\usepackage{subcaption}		% added for side by side tables
+\usepackage{arydshln}		% added for dashed hline
+\usepackage{multirow}		% added for merging rows in tables
+\usepackage{soul}			% added for strike out
+%set page header and footer
+
+
+% packages added by Austin Downey for the maths
+\usepackage{amsbsy} % added to use \pmb or poor mans bold
+\usepackage{txfonts} % added for \muup and other upright greek letters
+\usepackage{upgreek}
+
+% adjust the spacing around section titles
+\usepackage{titlesec}
+\titlespacing*{\section}
+{0pt}{2ex}{0.8ex}
+\titlespacing*{\subsection}
+{0pt}{1ex}{0.8ex}
+\titlespacing*{\subsubsection}
+{0pt}{0.8ex}{0.4ex}
+
+
+\newcommand{\tb}[1]{\textbf{#1}}
+\newcommand{\eq}[1]{\begin{equation}{#1}\end{equation}}
+\newcommand{\eqs}[1]{\begin{equation}\begin{split}{#1}\end{split}\end{equation}}
+
+
+\usepackage{color} % color added for editing
+\newcommand{\bl}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\gr}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\rd}[1]{\textcolor[rgb]{0.75,0.00,0.00}{#1}}
+\newcommand{\tl}[1]{\textcolor[rgb]{0,0.6,0.60}{#1}}
+
+
+\newcommand{\thrustsection}[2]{\noindent \textbf{Task #1:}{ \textbf{#2}}}
+\newcommand{\tasksection}[2]{\noindent \emph{Task #1:}{ \emph{#2}}}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand\myrightarrowline{\mathrel{\ooalign{$\rightarrow$\cr%
+			\kern-.15ex\raise.275ex\hbox{\scalebox{1}[0.522]{$\mid$}}\cr}}}
+
+
+\begin{document}
+	
+	\begin{center}
+		{\Large\textbf{Bill of Materials}}
+	\end{center}
+
+\noindent Bill of materials broken down by base package and optional solar and EPM add-on modules. Base package total cost is 117.71 USD.
+
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+
+\begin{longtable}{ p{1.75cm} p{4cm} p{1.25cm} p{1cm} p{1cm} p{2cm} p{2.5cm} }	
+	%\centering
+	\caption{Base package bill of materials.} 
+	\label{components} \\
+	%	\todo{can we put the distributors then add the urls in an appendix?}
+	\toprule
+	Designator & Component & Number of units & Cost per unit [USD] & Total cost [USD] & Source of materials & Material type \\
+	\midrule
+	Arduino Nano & Arduino Nano & 1 & 24.90 & 24.90 & Arduino & Semiconductor \\
+	
+	\rowcolor[gray]{0.925}
+	Micro SD card module & UMLIFE Micro SD SDHC TF card adaptor reader module with SPI interface & 1 & 0.89 & 0.89 & UMLIFE & Other \\
+	
+	NRF24L01+ & NRF24L01+ 2.4GHz Wireless RF Transceiver Module & 1 & 1.40 & 1.40 & MakerFocus & Semiconductor \\ 
+	
+	\rowcolor[gray]{0.925}
+	DS3231 real-time clock & DS3231M+ & 1 & 13.31 & 13.31 & Maxim Integrated & Semiconductor \\ 
+	
+	BME280 environmental sensor & BME280 & 1 & 5.245 & 5.245 & Onyehn & Semiconductor \\ 
+	
+	\rowcolor[gray]{0.925}
+	INA219 current sensor & INA219BIDR & 1 & 2.51 & 2.51 & Texas Instruments & Semiconductor \\ 
+	
+	N42 permanent magnet & Neodymium Disc Magnet - 1 1/4" Dia x 3/8" Thi & 1 & 12.67 & 12.67 & K\&J Magnetics Inc & Other \\ 
+	
+	\rowcolor[gray]{0.925}
+	Ultrasonic sensor & RCWL-1601 & 1 & 3.95 & 3.95 & Adafruit Industries LLC & Other \\
+	
+	2s 7.4V LiPo battery & Zeee 2S Lipo Battery 1500mAh 7.4V 60C with Deans Plug & 1 & 13.50 & 13.50 & Zeee & Other \\
+	
+	\rowcolor[gray]{0.925}
+	CR-1025 3V Li+ coin cell & CR-1025-ND & 1 & 1.09 & 1.09 & Jauch Quartz & Other \\
+	
+	RTC coin cell holder & BK-870 & 1 & 0.58 & 0.58 & MPD & Other \\
+	
+	\rowcolor[gray]{0.925}
+	Main PCB & Main board & 1 & 8.23 & 8.23 & See repository & Other \\
+	
+	Daughter PCB & Daughter board & 1 & 4.13 & 4.13 & See repository & Other \\
+	
+	\rowcolor[gray]{0.925}
+	Micro SD card & Gigastone 8GB 10-Pack Micro SD Card, Full HD Video 80MB/s Micro SDHC Class 10 & 1 & 3.00 & 3.00 & Gigastone & Other \\
+	
+	
+	Slide switch & SS-12D07-VG 4 NS GA PA & 1 & 0.85 & 0.85 & C\&K & Other \\
+	
+	\rowcolor[gray]{0.925}
+	LED & L314ED & 1 & 0.20 & 0.20 & American Opto Plus LED & Semiconductor \\
+	
+	
+	PNP transistor & BCP51-16-TP & 1 & 0.48 & 0.48 & Micro Commercial Co & Semiconductor \\
+	
+	\rowcolor[gray]{0.925}
+	NPN Transistor & BCP54 & 1 & 0.77 & 0.77 & onsemi & Semiconductor \\
+	
+	
+	Resistors & RES SMD (100, 1k, 4.7k) OHM 1\% 1/4W 1206 & 7 & 0.10 & 0.70 & Digikey & Semiconductor \\
+	
+	\rowcolor[gray]{0.925}
+	Shunt resistor & ERJ-8BSJR10V RES 0.1 OHM 5\% 1/2W 1206 & 1 & 0.40 & 0.40 & Panasonic & Semiconductor \\
+	
+	
+	Capacitors & C1206S104K5RACAUTO 0.1 $\mu$F 10\% 50V Ceramic Capacitor X7R 1206 (3216 Metric) & 4 & 0.42 & 1.68 & Kemet & Semiconductor \\
+	
+	\rowcolor[gray]{0.925}
+	5V regulator & MIC5239-5.0YS-TR & 2 & 3.58 & 7.16 & Microchip Technology & Semiconductor \\  
+	
+	
+	4" PVC pipe & Schedule 40 Clear Pipe, Non-threaded,  & 1 & 6.54 & 6.54 & Grainger & Polymer \\  
+
+	\rowcolor[gray]{0.925}
+	Dean's connector & PRT-11864  & 1 & 1.05 & 1.05 & Sparkfun Electronics & Other \\
+	
+	
+	Female HC-SR04 connector & SSA-104-W-T & 1 & 0.91 & 0.91 & Samtec & Other \\ 
+	
+	\rowcolor[gray]{0.925}
+	Female magnet connector & SSA-103-W-G & 1 & 1.29 & 1.29 & Samtec & Other \\ 
+	
+	
+	Female daughter board connector & PPPC071LGBN-RC & 1 & 0.67 & 0.67 & Sullins Connector Solutions & Other \\
+
+	\rowcolor[gray]{0.925}
+	Male daughter board connector & 0022284070 & 1 & 0.30 & 0.30 & Molex & Other \\ 
+	
+	\bottomrule
+\end{longtable}
+
+\pagebreak
+
+	
+\end{document}

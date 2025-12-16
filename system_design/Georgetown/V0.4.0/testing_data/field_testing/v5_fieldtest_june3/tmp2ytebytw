@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jun  4 15:10:46 2021
+
+@author: casmi
+"""
+
+
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from datetime import datetime
+import pandas as pd
+import pylab as pl
+
+import IPython as IP
+IP.get_ipython().magic('reset -sf')
+
+
+df0 = pd.read_csv('USGS_june3.csv',parse_dates=     {"Datetime" : [0,1]})
+df1 = pd.read_csv('v5_fieldtest_june3.csv',parse_dates=     {"Datetime" : [0,1]})
+
+plt.figure(figsize=(6.5,4.5))
+plt.plot(df0['Datetime'], df0['Stage (cm)'], '-', label='USGS' )
+plt.plot(df1['Datetime'], df1['Avg Dist (cm)'], '-v', label='ARTS')
+plt.legend(framealpha=1)
+plt.xlabel('time')
+plt.ylabel('distance (cm)')
+plt.locator_params(axis="x", nbins=5)
+plt.xticks(rotation=45)
+#plt.locator_params(axis="y", nbins=2)
+plt.tight_layout()
+plt.grid(True)
+plt.savefig('v5_fieldtest_june3.png', dpi=500)

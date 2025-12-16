@@ -1,0 +1,7 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "whs5-rescue")(type "Legacy")(uri "${KIPRJMOD}/lib_and_pretty/whs5-rescue.lib")(options "")(descr ""))
+  (lib (name "whs6-rescue")(type "Legacy")(uri "${KIPRJMOD}/lib_and_pretty/whs6-rescue.lib")(options "")(descr ""))
+  (lib (name "ARTS-Lab")(type "Legacy")(uri "${KIPRJMOD}/lib_and_pretty/ARTS-Lab.lib")(options "")(descr ""))
+  (lib (name "main_board-rescue")(type "KiCad")(uri "${KIPRJMOD}/main_board-rescue.kicad_sym")(options "")(descr ""))
+)

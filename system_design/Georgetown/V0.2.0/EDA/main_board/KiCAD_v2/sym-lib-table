@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name whs5-rescue)(type Legacy)(uri C:/Users/casmi/OneDrive/Documents/GitHub/magDrone/Hydrologic_Parameters/V0_Development/V0_5/Main_Board/whs5-rescue.lib)(options "")(descr ""))
+  (lib (name whs6-rescue)(type Legacy)(uri ${KIPRJMOD}/whs6-rescue.lib)(options "")(descr ""))
+)

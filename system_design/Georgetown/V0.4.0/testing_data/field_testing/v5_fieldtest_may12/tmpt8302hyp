@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon May 17 08:26:23 2021
+
+@author: casmi
+"""
+
+import matplotlib.pyplot as plt
+from datetime import datetime
+import pandas as pd
+import pylab as pl
+
+
+df0 = pd.read_csv('USGS_may12.csv0')
+df = pd.read_csv('v5_fieldtest_may12_teensy.csv')
+print(df)
+df2 = pd.read_csv('v5_fieldtest_may12_nano.csv')
+#df.Datetime=pd.to_datetime(df.Datetime)
+df.set_index('Datetime')
+
+plt.figure(figsize=(6.5,3))
+plt.plot(df0['Datetime'], df0['USGS'], '-', label='USGS' )
+plt.plot(df['Datetime'], df['Teensy'], '-v', label='Teensy')
+plt.plot(df2['Datetime'], df2['Nano'], '--o', label='Nano')
+plt.legend(framealpha=1)
+plt.xlabel('time')
+plt.ylabel('distance (cm)')
+plt.tight_layout()
+plt.grid(True)

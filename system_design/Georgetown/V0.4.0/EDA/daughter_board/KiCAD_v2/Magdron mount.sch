@@ -1,0 +1,297 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Magdron-mount-rescue:MAG-MAG-Magdron-mount-rescue .1
+U 1 1 60B15368
+P 7250 2450
+F 0 ".1" H 7518 2311 50  0000 L CNN
+F 1 "MAG-MAG" H 7518 2220 50  0000 L CNN
+F 2 "custom:Magnet" H 7250 2100 50  0001 C CNN
+F 3 "" H 7250 2100 50  0001 C CNN
+	1    7250 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Magdron-mount-rescue:power_input-ARTS-Lab U1
+U 1 1 60B1605B
+P 1900 2900
+F 0 "U1" H 1900 2301 50  0000 C CNN
+F 1 "power_input" H 1900 2384 39  0000 C CNN
+F 2 "custom:XT60PW" H 1900 2900 50  0001 C CNN
+F 3 "" H 1900 2900 50  0001 C CNN
+	1    1900 2900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 60B17585
+P 6400 3850
+F 0 "R3" H 6470 3896 50  0000 L CNN
+F 1 "100" H 6470 3805 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6330 3850 50  0001 C CNN
+F 3 "~" H 6400 3850 50  0001 C CNN
+	1    6400 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 60B1784D
+P 5450 2800
+F 0 "R1" H 5520 2846 50  0000 L CNN
+F 1 "1k" H 5520 2755 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 5380 2800 50  0001 C CNN
+F 3 "~" H 5450 2800 50  0001 C CNN
+	1    5450 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 60B17D0C
+P 6100 3100
+F 0 "R2" H 6170 3146 50  0000 L CNN
+F 1 "100" H 6170 3055 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6030 3100 50  0001 C CNN
+F 3 "~" H 6100 3100 50  0001 C CNN
+	1    6100 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D1
+U 1 1 60B182E7
+P 3200 2700
+F 0 "D1" H 3200 2483 50  0000 C CNN
+F 1 "D" H 3200 2574 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3200 2700 50  0001 C CNN
+F 3 "~" H 3200 2700 50  0001 C CNN
+	1    3200 2700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Regulator_Linear:KA78M05_TO252 U3
+U 1 1 60B189FD
+P 3950 2700
+F 0 "U3" H 3950 2942 50  0000 C CNN
+F 1 "KA78M05_TO252" H 3950 2851 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TO-252-2" H 3950 2925 50  0001 C CIN
+F 3 "http://www.fairchildsemi.com/ds/LM/LM78M05.pdf" H 3950 2650 50  0001 C CNN
+	1    3950 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F1
+U 1 1 60B1A1DF
+P 2650 2700
+F 0 "F1" V 2453 2700 50  0000 C CNN
+F 1 "Fuse" V 2544 2700 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2580 2700 50  0001 C CNN
+F 3 "~" H 2650 2700 50  0001 C CNN
+	1    2650 2700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2200 2700 2500 2700
+Wire Wire Line
+	2800 2700 3050 2700
+Wire Wire Line
+	3350 2700 3500 2700
+Wire Wire Line
+	5450 2650 5900 2650
+Wire Wire Line
+	6300 2650 7150 2650
+Wire Wire Line
+	6400 3550 6400 3700
+Wire Wire Line
+	5450 2950 5450 3250
+Wire Wire Line
+	6100 2350 6100 2950
+Wire Wire Line
+	7150 4100 7150 2750
+Connection ~ 5450 2650
+Wire Wire Line
+	4800 2650 5450 2650
+Wire Wire Line
+	5200 4000 6400 4000
+Wire Wire Line
+	5100 4100 7150 4100
+Wire Wire Line
+	3600 4050 4900 4050
+Wire Wire Line
+	3600 3850 4600 3850
+Wire Wire Line
+	4700 3750 3600 3750
+$Comp
+L power:GND #PWR05
+U 1 1 60B3331E
+P 5000 3550
+F 0 "#PWR05" H 5000 3300 50  0001 C CNN
+F 1 "GND" H 5005 3377 50  0000 C CNN
+F 2 "" H 5000 3550 50  0001 C CNN
+F 3 "" H 5000 3550 50  0001 C CNN
+	1    5000 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 60B3410F
+P 3950 3000
+F 0 "#PWR04" H 3950 2750 50  0001 C CNN
+F 1 "GND" H 3955 2827 50  0000 C CNN
+F 2 "" H 3950 3000 50  0001 C CNN
+F 3 "" H 3950 3000 50  0001 C CNN
+	1    3950 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 60B348ED
+P 6600 3250
+F 0 "#PWR06" H 6600 3000 50  0001 C CNN
+F 1 "GND" H 6605 3077 50  0000 C CNN
+F 2 "" H 6600 3250 50  0001 C CNN
+F 3 "" H 6600 3250 50  0001 C CNN
+	1    6600 3250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 60B34E73
+P 7150 2550
+F 0 "#PWR07" H 7150 2300 50  0001 C CNN
+F 1 "GND" H 7155 2377 50  0000 C CNN
+F 2 "" H 7150 2550 50  0001 C CNN
+F 3 "" H 7150 2550 50  0001 C CNN
+	1    7150 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Transistor_BJT:BCP51 Q1
+U 1 1 60B35364
+P 6100 2550
+F 0 "Q1" V 6335 2550 50  0000 C CNN
+F 1 "BCP51" V 6426 2550 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 6300 2475 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BC/BCP51.pdf" H 6100 2550 50  0001 L CNN
+	1    6100 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Transistor_BJT:BCP56 Q2
+U 1 1 60B36A9B
+P 6400 3350
+F 0 "Q2" V 6728 3350 50  0000 C CNN
+F 1 "BCP56" V 6637 3350 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 6600 3275 50  0001 L CIN
+F 3 "http://cache.nxp.com/documents/data_sheet/BCP56_BCX56_BC56PA.pdf?pspll=1" H 6400 3350 50  0001 L CNN
+	1    6400 3350
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6100 3250
+Wire Wire Line
+	6100 3250 6200 3250
+Wire Wire Line
+	5450 3250 6100 3250
+$Comp
+L power:GND #PWR03
+U 1 1 60B380AF
+P 3600 3950
+F 0 "#PWR03" H 3600 3700 50  0001 C CNN
+F 1 "GND" V 3605 3822 50  0000 R CNN
+F 2 "" H 3600 3950 50  0001 C CNN
+F 3 "" H 3600 3950 50  0001 C CNN
+	1    3600 3950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 60B387C9
+P 1600 2800
+F 0 "#PWR01" H 1600 2550 50  0001 C CNN
+F 1 "GND" H 1605 2627 50  0000 C CNN
+F 2 "" H 1600 2800 50  0001 C CNN
+F 3 "" H 1600 2800 50  0001 C CNN
+	1    1600 2800
+	1    0    0    -1  
+$EndComp
+Connection ~ 4800 2700
+Wire Wire Line
+	4800 2700 4800 2650
+$Comp
+L Device:C C1
+U 1 1 60B7BDF4
+P 3500 2550
+F 0 "C1" H 3615 2596 50  0000 L CNN
+F 1 "C" H 3615 2505 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3538 2400 50  0001 C CNN
+F 3 "~" H 3500 2550 50  0001 C CNN
+	1    3500 2550
+	1    0    0    -1  
+$EndComp
+Connection ~ 3500 2700
+Wire Wire Line
+	3500 2700 3650 2700
+$Comp
+L power:GND #PWR02
+U 1 1 60B7CCEE
+P 3500 2400
+F 0 "#PWR02" H 3500 2150 50  0001 C CNN
+F 1 "GND" H 3505 2227 50  0000 C CNN
+F 2 "" H 3500 2400 50  0001 C CNN
+F 3 "" H 3500 2400 50  0001 C CNN
+	1    3500 2400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4250 2700 4800 2700
+$Comp
+L Magdron-mount-rescue:top_rail_v2-ARTS-Lab U4
+U 1 1 60BB9293
+P 4850 3150
+F 0 "U4" H 5278 3188 50  0000 L CNN
+F 1 "top_rail_v2" H 5278 3097 50  0000 L CNN
+F 2 "custom:top_rail_v2" H 4850 3150 50  0001 C CNN
+F 3 "" H 4850 3150 50  0001 C CNN
+	1    4850 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 3400 4800 2700
+Wire Wire Line
+	5200 3400 5200 4000
+Wire Wire Line
+	5100 3400 5100 4100
+Wire Wire Line
+	5000 3400 5000 3550
+Wire Wire Line
+	4900 3400 4900 4050
+Wire Wire Line
+	4700 3400 4700 3750
+Wire Wire Line
+	4600 3400 4600 3850
+Connection ~ 4800 3400
+Wire Wire Line
+	4800 3500 4800 3400
+$Comp
+L Magdron-mount-rescue:BME280-ARTS-Lab U2
+U 1 1 60BD1108
+P 3150 3950
+F 0 "U2" V 3565 3667 50  0000 C CNN
+F 1 "BME280" V 3474 3667 50  0000 C CNN
+F 2 "custom:BME280" H 3150 3950 50  0001 C CNN
+F 3 "" H 3150 3950 50  0001 C CNN
+	1    3150 3950
+	0    -1   -1   0   
+$EndComp
+$EndSCHEMATC

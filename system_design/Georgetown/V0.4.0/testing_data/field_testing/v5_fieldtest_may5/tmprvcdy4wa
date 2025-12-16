@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May  6 20:16:30 2021
+
+@author: casmi
+"""
+
+
+import matplotlib.pyplot as plt
+import matplotlib.cbook as cbook
+
+import numpy as np
+import pandas as pd
+
+plt.close('all')
+
+#%% Teensy power
+voltage = pd.read_csv('v5_may3_battery.csv')
+print(voltage)
+x = voltage['time']
+y = voltage['voltage']
+
+plt.figure(figsize=(6.5,3))
+plt.plot(x, y)
+plt.xlabel('Time (s)')
+plt.ylabel('Voltage (V)')
+plt.tight_layout()
+plt.grid(True)

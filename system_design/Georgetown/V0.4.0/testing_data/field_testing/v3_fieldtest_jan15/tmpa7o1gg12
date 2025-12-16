@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar  2 15:39:04 2021
+
+@author: casmi
+"""
+from pandas import read_csv
+from matplotlib import pyplot
+
+USGS = read_csv('USGS_v3_fieldtest_jan15.csv', header=0, parse_dates=[0], index_col=0, squeeze=True)
+print(type(USGS))
+print(USGS.head())
+
+ARTS = read_csv('ARTS_v3_fieldtest_jan15.csv', header=0, parse_dates=[0], index_col=0, squeeze=True)
+print(type(ARTS))
+print(ARTS.head())
+
+pyplot.plot(USGS, '-v', color='blue', markersize=8, linewidth=2)
+pyplot.plot(ARTS, '--o', color='orange', markersize=8, linewidth=2)
+pyplot.show()
+

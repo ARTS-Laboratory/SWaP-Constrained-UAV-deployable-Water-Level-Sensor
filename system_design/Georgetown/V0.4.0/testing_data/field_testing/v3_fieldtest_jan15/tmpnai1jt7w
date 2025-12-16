@@ -1,0 +1,34 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar  2 15:39:04 2021
+
+@author: casmi
+"""
+
+# import modules
+import IPython as IP
+IP.get_ipython().magic('reset -sf')
+
+
+import pandas as pd
+from matplotlib import pyplot
+
+USGS = pd.read_csv('USGS_v3_fieldtest_jan15.csv', header=0, parse_dates=[1], index_col=0, squeeze=True)
+print(type(USGS))
+print(USGS.head())
+
+ARTS = pd.read_csv('ARTS_v3_fieldtest_jan15.csv', header=0, parse_dates=[1], index_col=0, squeeze=True)
+print(type(ARTS))
+print(ARTS.head())
+
+pyplot.figure(figsize=(6.5,3))
+pyplot.plot(USGS, '-v', color='blue', markersize=8, linewidth=2, label = "USGS")
+pyplot.plot(ARTS, '--o', color='orange', markersize=8, linewidth=2, label = "ARTS")
+pyplot.legend(framealpha=1)
+pyplot.xlabel('time (s)')
+pyplot.ylabel('distance (cm)')
+pyplot.tight_layout()
+pyplot.grid(True)
+pyplot.show()
+
+# to change back, take the dates out of the .csv files and change parse_dates=[0]
