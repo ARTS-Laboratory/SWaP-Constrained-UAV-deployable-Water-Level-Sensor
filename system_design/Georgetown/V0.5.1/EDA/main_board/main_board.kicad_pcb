@@ -10329,7 +10329,7 @@
 			)
 		)
 	)
-	(gr_text "Stage Height V0.5"
+	(gr_text "Stage Height V0.5.1"
 		(at 139.5 132 90)
 		(layer "F.SilkS")
 		(uuid "66677efa-7151-45c7-97c2-fe150f0cb93e")
