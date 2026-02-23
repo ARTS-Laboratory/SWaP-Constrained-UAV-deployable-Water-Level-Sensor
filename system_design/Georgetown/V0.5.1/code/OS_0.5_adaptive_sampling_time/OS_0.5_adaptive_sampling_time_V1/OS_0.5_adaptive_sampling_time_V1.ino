@@ -37,9 +37,9 @@ unsigned long prevTimeElapsed = 0;
 
 // Returns the sleep interval in seconds based on LiPo voltage
 unsigned long getDynamicInterval(float voltage) {
-  if (voltage >= 8) return 15*60;        // 30 min
-  else if (voltage >= 7.4) return 15*60;  // 60 min
-  else return 15*60;                  // 2 hours
+  if (voltage >= 8) return 5*60;        // 15 min
+  else if (voltage >= 7.4) return 5*60;  // 15 min
+  else return 5*60;                  // 15 hours
 }
 
 void setup() {

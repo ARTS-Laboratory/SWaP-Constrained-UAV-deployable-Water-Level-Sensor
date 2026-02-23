@@ -32,7 +32,7 @@ Adafruit_INA219 ina219;
 
 // controls ---------------------------------------------------------------------------------------------
 const int LED = A3;
-constexpr time_t alarmInterval{10*60}; // wake up interval in seconds
+constexpr time_t alarmInterval{5*60}; // wake up interval in seconds
 unsigned long prevTimeElapsed = 0;
 
 void setup() {
