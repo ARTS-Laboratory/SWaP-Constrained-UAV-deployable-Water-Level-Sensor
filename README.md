@@ -1,4 +1,4 @@
-# UAV-Deployable-Stage-Height-Sensor
+# SWaP-Constrained UAV-deployable Water-Level Sensor (SCUWLS)
 UAV Deployable Stage Height Sensor with Magnetic Docking Mechanism
 
 <p align="center">
