@@ -58,10 +58,10 @@ This work is licensed under a
 
 Cite as:
 
-@Misc{ARTSLabUavDeployableStage,     
+@Misc{ARTSLabSwapConstrainedUav,     
   author = {{ARTS-L}ab},  
   howpublished = {GitHub},  
-  title  = {{SWaP-Constrained UAV-deployable Water-Level Sensor} (SCUWLS)},    
+  title  = {{SWaP-Constrained UAV-deployable Water-Level Sensor (SCUWLS)}},    
   groups = {{ARTS-L}ab},    
   url    = {https://github.com/ARTS-Laboratory/SWaP-Constrained-UAV-deployable-Water-Level-Sensor},   
 }
