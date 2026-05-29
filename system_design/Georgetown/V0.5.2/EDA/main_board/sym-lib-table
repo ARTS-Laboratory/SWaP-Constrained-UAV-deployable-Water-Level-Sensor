@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Pololu LV switch psw03a")(type "KiCad")(uri "C:/Users/MK92/OneDrive - University of South Carolina/Github Repos/UAV-Deployable-Stage-Height-Sensor/system_design/Georgetown/V0.5.2/EDA/lib_and_pretty/Pololu LV switch psw03a/Pololu LV switch psw03a.kicad_sym")(options "")(descr ""))
+)
