@@ -1,7 +1,41 @@
-**/.DS_Store
-~$*
-*.DS_Store
-*.bak
+# =========================
+# Archives
+# =========================
 *.zip
-*fp-info-cache
+
+# =========================
+# KiCad cache files
+# =========================
+fp-cache
+fp-info-cache
+
+# =========================
+# KiCad backups & autosaves
+# =========================
+*.bak
+*-autosave.kicad_sch
+*-autosave.kicad_pcb
+
+# =========================
+# KiCad user-specific settings
+# =========================
+*.kicad_prl
+
+# =========================
+# KiCad temp / lock files
+# =========================
 *.lck
+*.tmp
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Visual Micro / Arduino IDE temp files
+# =========================
+__vm/
+*.vmps.xml
+*.vsarduino.h
